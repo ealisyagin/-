@@ -1,0 +1,21 @@
+{% extends 'system/layout.html' %}
+
+{% block title %}
+	Запрос
+{% endblock %}
+
+{% block content %}
+
+		<h1>Запрос</h1><br><br>
+        {% for e in ex%}
+        {{e}}<br>
+        {%endfor%}
+		<form enctype="multipart/form-data" method="post">
+			{% csrf_token %}
+			{{ form.user_id }}<br>
+			<span>{{ error }}</span>
+
+			<button class="btn btn-success" type="submit">Отправить</button>
+
+		</form>
+{% endblock %}

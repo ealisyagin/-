@@ -1,0 +1,24 @@
+{% extends 'system/layout.html' %}
+
+{% block title %}
+	Рекомендации
+{% endblock %}
+
+{% block content %}
+		<h1>Рекомендации</h1><br><br>
+		
+	{% if work %}
+		
+		{% for el in work %}
+		<div class="media">
+			<div class="media-body">
+				<h5 class="mt-0">Для пользователя {{el.user_id}} рекомендуется {{el.recomendations}}</h5>
+			</div>
+		</div>
+		<br><br>
+		{% endfor %}
+	{% else %}
+			<p>Нет записей</p>
+	{% endif %}
+		
+{% endblock %}
